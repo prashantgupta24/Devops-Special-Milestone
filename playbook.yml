@@ -1,0 +1,6 @@
+#---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: copy project files
+    copy: src=app.js  dest=/home/ubuntu/app
