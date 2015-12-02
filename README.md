@@ -10,7 +10,7 @@ For example, here you see that the versions for the Express module are different
 
 ![Image](https://github.com/prashantgupta24/Devops-Special-Milestone/blob/master/special%20milestone.png)
 
-****Post Commit hook
+#### Post Commit hook
 We ran a script on the post commit hook which took care of all the work for us.
 
         ssh -i "My AWS Key.pem" ubuntu@52.10.138.95 'cd app; npm --version > npmversion'
@@ -22,7 +22,7 @@ We ran a script on the post commit hook which took care of all the work for us.
 
 The first 3 lines actually talk to the server, and fetch the NPM version installed on the server as well as the package.json file. The 4th line prepares a document which has the differences in the dependencies of both the package.json files. The *client.js* file reads these changes, and if it identifies that there is a version mismatch in either the NPM version or the package.json dependency version, it triggers a new instance, and creates new Inventory and Jenkins job files. The next line executes the Jenkins job.
 
-****Playbook for new server
+#### Playbook for new server
 
 The playbook for the new server is run via Jenkins. It brings the new instance up with the desired changes and the correct versions.
 
