@@ -46,4 +46,4 @@ The playbook for the new server is run via Jenkins. It brings the new instance u
 
 #### Screencast
 
-        https://www.youtube.com/watch?v=vUo5vJaRYxk&feature=youtu.be
+https://www.youtube.com/watch?v=vUo5vJaRYxk&feature=youtu.be
