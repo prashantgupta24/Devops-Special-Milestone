@@ -20,7 +20,7 @@ We ran a script on the post commit hook which took care of all the work for us.
         node client.js
         ./jenkins.sh
 
-The first 3 lines actually talk to the server, and fetch the NPM version installed on the server as well as the package.json file. The 4th line prepares a document which has the differences in the dependencies of both the package.json files. The *client.js* file reads these changes, and if it identifies that there is a version mismatch in either the NPM version or the package.json dependency version, it triggers a new instance, and creates new Inventory and Jenkins job files. The next line executes the Jenkins job.
+The first 3 lines actually talk to the server, and fetch the NPM version installed on the server as well as the package.json file. The 4th line is a npm module called *packcomp*, which is a handy tool for comparing package.json files. It prepares a document which has the differences in the dependencies of both the package.json files. The *client.js* file reads these changes, and if it identifies that there is a version mismatch in either the NPM version or the package.json dependency version, it triggers a new instance, and creates new Inventory and Jenkins job files. The next line executes the Jenkins job.
 
 #### Playbook for new server
 
@@ -43,3 +43,7 @@ The playbook for the new server is run via Jenkins. It brings the new instance u
             copy: src=package.json dest=/home/ubuntu/app
           - name: "Run npm install"
             command: chdir=/home/ubuntu/app npm install
+
+#### Screencast
+
+        https://www.youtube.com/watch?v=vUo5vJaRYxk&feature=youtu.be
